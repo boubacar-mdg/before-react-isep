@@ -15,7 +15,7 @@ const players = [
       club: "Real Madrid"
     },
     {
-      id: 3,
+      id: 4,
       name:"Raphinha",
       club: "FC Barcelone"
     },
@@ -54,5 +54,13 @@ newPlayers = players.map((player) => {
 console.log(newPlayers);
 
 newPlayers = players.map((player) => ({...player, ucl: player.club == "FC Barcelone" ? "8eme de finale" : "16eme de finale"}));
+
+console.log(newPlayers);
+
+
+newPlayers = players.map((player, i) => {
+    if(i === players.length - 1) console.log("Finish");
+    return {...player, ucl: player.club == "FC Barcelone" ? "8eme de finale" : "16eme de finale"};
+});
 
 console.log(newPlayers);
